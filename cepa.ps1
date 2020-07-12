@@ -36,14 +36,11 @@ function Stop-Tor {
 }
 
 function Register-Tor {
-	Write-Output "Registering tor as a service"
-	tor --service install --options -f $env:LOCALAPPDATA\tor\torrc --allow-missing-torrc
+	.\scripts\register_service.ps1 
 }
 
 function Deregister-Tor {
-	Write-Verbose "Removing tor service"
-	tor --service remove
-	Write-Verbose "tor service removed."
+	.\scripts\deregister_service.ps1 
 }
 
 if ($do -eq "") {
@@ -55,7 +52,8 @@ if ($do -eq "") {
 		Install-Tor
 	}
 	Add-TorPath
-	Start-Tor
+	# Start-Tor
+	tor -f $env:LOCALAPPDATA\tor\torrc --allow-missing-torrc
 } else {
 	Add-TorPath
 
