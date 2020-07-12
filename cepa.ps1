@@ -76,8 +76,8 @@ action:
 	start: start tor as a service
 	stop: stop tor (service)
 	hard-start: start tor in the same command window
-	register: register tor as a service
-	deregister: deregister tor as a service
+	register: register tor as a service (Requires admin privileges) (currently not working) 
+	deregister: deregister tor as a service (Requires admin privileges) (currently not working)
 	install: install
 	help: show this message
 		"
