@@ -53,7 +53,7 @@ if ($do -eq "") {
 	}
 	Add-TorPath
 	# Start-Tor
-	tor -f $env:LOCALAPPDATA\tor\torrc --allow-missing-torrc
+	tor -f $env:LOCALAPPDATA\tor\torrc --allow-missing-torrc --HTTPTunnelPort 8118
 } else {
 	Add-TorPath
 
@@ -66,7 +66,7 @@ if ($do -eq "") {
 	} elseif ($do -eq "deregister") {
 		Deregister-Tor
 	} elseif ($do -eq "hard-start") {
-		tor -f $env:LOCALAPPDATA\tor\torrc --allow-missing-torrc
+		tor -f $env:LOCALAPPDATA\tor\torrc --allow-missing-torrc --HTTPTunnelPort 8118
 	} elseif ($do -eq "install") {
 		Install-Tor
 	} elseif ($do -eq "help") {
